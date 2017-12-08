@@ -1,28 +1,16 @@
 # ProjetoAurora
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
+Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Execute `ng serve` no terminal para um dev server. Navegue ate `http://localhost:4200/` no browser. 
 
-## Code scaffolding
+## Funcionamento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Role 5 dados e coloque o valor (de 1 a 6, valores do dado) nos cinco campos de "Valor dado". Os valores seráo ordenador nos campos
+Apos colocados os 5 valores ira aparecer as pontuacoes possivel, escolha uma para ver a pontuacao obtida atraves daquele metodo.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 # projeto-aurora
