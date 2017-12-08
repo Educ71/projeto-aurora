@@ -1,0 +1,66 @@
+<h3>Coloque os valor do dado em cada jogada</h3>
+
+<div *ngFor="let item of [0,1,2,3,4]">
+  <label>Valor dado:</label><br>
+  <input [(ngModel)]="jogadaService.jogada.dice_value[item]"><br><br>
+</div>
+<!-- <label>Primeiro valor: </label><br>
+<input  [(ngModel)]="jogadaService.jogada.dice_one" placeholder="Primeiro valor" ><br><br>
+
+<label>Segundo valor: </label><br>
+<input  [(ngModel)]="jogadaService.jogada.dice_two" placeholder="Segundo valor"><br><br>
+
+<label>Terceiro valor: </label><br>
+<input  [(ngModel)]="jogadaService.jogada.dice_three" placeholder="Terceiro valor"><br><br>
+
+<label>Quarto valor: </label><br>
+<input  [(ngModel)]="jogadaService.jogada.dice_four" placeholder="Quarto valor"><br><br>
+
+<label>Quinto valor: </label><br>
+<input  [(ngModel)]="jogadaService.jogada.dice_five" placeholder="Quinto valor"><br><br> -->
+
+<div *ngIf="jogadas()">
+  <h1>Pontuacoes:</h1>
+  <ul>
+    <li><a [routerLink]="['/uns', 1]">Uns</a></li>
+
+    <li><a [routerLink]="['/dois', 2]">Dois</a></li>
+
+    <li><a [routerLink]="['/tres', 3]">Tres</a></li>
+
+    <li><a [routerLink]="['/quatros', 4]">Quatros</a></li>
+
+    <li><a [routerLink]="['/cincos', 5]">Cincos</a></li>
+
+    <li><a [routerLink]="['/seis', 6]">Seis</a></li>
+
+    <li><a [routerLink]="['/par', 1]">Par</a></li>
+
+    <li><a [routerLink]="['/dois-par', 2]">Dois pares</a></li>
+
+    <li><a [routerLink]="['/trio']">Trio</a></li>
+
+    <li><a [routerLink]="['/quadra']">Quadra</a></li>
+
+    <li><a [routerLink]="['/sequencia-menor', 3]">Sequencia menor</a></li>
+
+    <li><a [routerLink]="['/sequencia-maior', 4]">Sequencia maior</a></li>
+
+    <li><a [routerLink]="['/full-house']">Full House</a></li>
+
+    <li><a [routerLink]="['/aurora']">Aurora</a></li>
+  </ul>
+  <!-- <app-value-verify></app-value-verify>
+
+  <app-even-verify></app-even-verify>
+
+  <app-trio-verify></app-trio-verify>
+
+  <app-quadra-verify></app-quadra-verify>
+
+  <app-sequency-verify></app-sequency-verify>
+
+  <app-full-house-verify></app-full-house-verify>
+
+  <app-aurora-verify></app-aurora-verify> -->
+</div>
