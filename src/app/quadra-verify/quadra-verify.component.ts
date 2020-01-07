@@ -1,7 +1,5 @@
-
 import { Component, OnInit } from '@angular/core';
-
-import { JogadaService } from './../jogada.service';
+import { TurnService } from '../turn.service';
 
 @Component({
   selector: 'app-quadra-verify',
@@ -10,23 +8,23 @@ import { JogadaService } from './../jogada.service';
 })
 export class QuadraVerifyComponent implements OnInit {
 
-  jogadaService: JogadaService;
+  turnService: TurnService;
   
-  quadra_verify(): number {
-    let jogadas = this.jogadaService.jogada.dice_value;
+  quadraVerify(): number {
+    let turns = this.turnService.turn.diceValue;
     let result = 0;
-    let index = jogadas.length - 1;
-    console.log("As jogadas aqui: " + jogadas);
+    let index = turns.length - 1;
+    console.log("As turns aqui: " + turns);
     for(let first = index; first > 2; first--){
       for (let second = first - 1; second > 1; second--) {
         for (let third = second - 1; third > 0; third--) {
           for (let fourth = third - 1; fourth >= 0; fourth--) {
-            console.log("as comparacoes aqui: " + jogadas[first]);
-            console.log("as comparacoes aqui: " + jogadas[second]);
-            console.log("as comparacoes aqui: " + jogadas[third]);
-            console.log("as comparacoes aqui: " + jogadas[fourth]);
-            if (jogadas[first] == jogadas[second] && jogadas[first] == jogadas[third] && jogadas[first] == jogadas[fourth]) {
-              return 4*jogadas[first];
+            console.log("as comparacoes aqui: " + turns[first]);
+            console.log("as comparacoes aqui: " + turns[second]);
+            console.log("as comparacoes aqui: " + turns[third]);
+            console.log("as comparacoes aqui: " + turns[fourth]);
+            if (turns[first] == turns[second] && turns[first] == turns[third] && turns[first] == turns[fourth]) {
+              return 4*turns[first];
             }
           }
         }      
@@ -35,8 +33,8 @@ export class QuadraVerifyComponent implements OnInit {
     return result;
   }
   
-  constructor(_jogadaService: JogadaService) {
-    this.jogadaService = _jogadaService;
+  constructor(_turnService: TurnService) {
+    this.turnService = _turnService;
   }
 
   ngOnInit() {

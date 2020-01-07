@@ -1,7 +1,5 @@
-
 import { Component, OnInit } from '@angular/core';
-
-import { JogadaService } from '../jogada.service';
+import { TurnService } from '../turn.service';
 
 @Component({
   selector: 'app-aurora-verify',
@@ -10,21 +8,21 @@ import { JogadaService } from '../jogada.service';
 })
 export class AuroraVerifyComponent implements OnInit {
 
-  jogadaService: JogadaService
+  turnService: TurnService
 
-  aurora_verify(): number{
-    let size = this.jogadaService.jogada.dice_value.length;
-    let maior = this.jogadaService.jogada.dice_value[size - 1];
+  auroraVerify(): number{
+    let size = this.turnService.turn.diceValue.length;
+    let maior = this.turnService.turn.diceValue[size - 1];
     for (let i = size - 1; i >= 0; i--) {
-      if (this.jogadaService.jogada.dice_value[i] != maior) {
+      if (this.turnService.turn.diceValue[i] != maior) {
         return 0;
       }     
     }
     return 50;
   }
 
-  constructor(_jogadaService: JogadaService) { 
-    this.jogadaService = _jogadaService;
+  constructor(_turnService: TurnService) { 
+    this.turnService = _turnService;
   }
 
   ngOnInit() {

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { JogadaService } from './../jogada.service';
-import { TrioEvenService } from './../trio-even.service';
+import { TrioEvenService } from '../trio-even.service';
 
 @Component({
   selector: 'app-full-house-verify',
@@ -9,15 +7,14 @@ import { TrioEvenService } from './../trio-even.service';
   styleUrls: ['./full-house-verify.component.css']
 })
 export class FullHouseVerifyComponent implements OnInit {
-
   trioEvenService: TrioEvenService;
   
-  full_house_verify(): number{
-    let trio = this.trioEvenService.trio_verify();
+  fullHouseVerify(): number{
+    let trio = this.trioEvenService.trioVerify();
     if (trio == 0) {
       return 0;
     } else {
-      let even = this.trioEvenService.verify_even(1, 5, trio);
+      let even = this.trioEvenService.verifyEven(1, 5, trio);
       if(even == 0){
         return 0;
       } else return this.soma();
@@ -26,8 +23,8 @@ export class FullHouseVerifyComponent implements OnInit {
 
   soma(): number {
     let result = 0;
-    for (let i = 0; i < this.trioEvenService.jogadaService.jogada.dice_value.length; i++) {
-      result = parseInt(result.toString()) + parseInt(this.trioEvenService.jogadaService.jogada.dice_value[i].toString());
+    for (let i = 0; i < this.trioEvenService.turnService.turn.diceValue.length; i++) {
+      result = parseInt(result.toString()) + parseInt(this.trioEvenService.turnService.turn.diceValue[i].toString());
     }
     return result;
   }

@@ -2,24 +2,24 @@
 
 <div *ngFor="let item of [0,1,2,3,4]">
   <label>Valor dado:</label><br>
-  <input [(ngModel)]="jogadaService.jogada.dice_value[item]"><br><br>
+  <input [(ngModel)]="turnService.turn.diceValue[item]"><br><br>
 </div>
 <!-- <label>Primeiro valor: </label><br>
-<input  [(ngModel)]="jogadaService.jogada.dice_one" placeholder="Primeiro valor" ><br><br>
+<input  [(ngModel)]="turnService.turn.dice_one" placeholder="Primeiro valor" ><br><br>
 
 <label>Segundo valor: </label><br>
-<input  [(ngModel)]="jogadaService.jogada.dice_two" placeholder="Segundo valor"><br><br>
+<input  [(ngModel)]="turnService.turn.dice_two" placeholder="Segundo valor"><br><br>
 
 <label>Terceiro valor: </label><br>
-<input  [(ngModel)]="jogadaService.jogada.dice_three" placeholder="Terceiro valor"><br><br>
+<input  [(ngModel)]="turnService.turn.dice_three" placeholder="Terceiro valor"><br><br>
 
 <label>Quarto valor: </label><br>
-<input  [(ngModel)]="jogadaService.jogada.dice_four" placeholder="Quarto valor"><br><br>
+<input  [(ngModel)]="turnService.turn.dice_four" placeholder="Quarto valor"><br><br>
 
 <label>Quinto valor: </label><br>
-<input  [(ngModel)]="jogadaService.jogada.dice_five" placeholder="Quinto valor"><br><br> -->
+<input  [(ngModel)]="turnService.turn.dice_five" placeholder="Quinto valor"><br><br> -->
 
-<div *ngIf="jogadas()">
+<div *ngIf="turns()">
   <h1>Pontuacoes:</h1>
   <ul>
     <li><a [routerLink]="['/uns', 1]">Uns</a></li>

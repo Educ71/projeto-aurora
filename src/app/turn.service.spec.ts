@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TrioEvenService } from './trio-even.service';
+import { TurnService } from './turn.service';
 
-describe('TrioEvenService', () => {
+describe('TurnService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: TrioEvenService = TestBed.get(TrioEvenService);
+    const service: TurnService = TestBed.get(TurnService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,9 +1,7 @@
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Jogada } from './../jogada/jogada.component';
-import { JogadaService } from './../jogada.service';
+import { TurnService } from './../turn.service';
 
 @Component({
   selector: 'app-value-verify',
@@ -14,36 +12,36 @@ export class ValueVerifyComponent implements OnInit {
 
   valor: number;
 
-  private jogadaService: JogadaService;
+  private turnService: TurnService;
 
   verify(val: number): number {
     let result: number = 0;
-    let size = this.jogadaService.jogada.dice_value.length;
+    let size = this.turnService.turn.diceValue.length;
     for (let i = 0; i < size; i++) {
-      if (this.jogadaService.jogada.dice_value[i] == val) {
-        result = parseInt(result.toString()) + parseInt(this.jogadaService.jogada.dice_value[i]);
+      if (this.turnService.turn.diceValue[i] == val) {
+        result = parseInt(result.toString()) + parseInt(this.turnService.turn.diceValue[i]);
       }     
     }
-    // if(this.jogadaService.jogada.dice_one == val){
-    //   result = parseInt(result.toString()) + parseInt(this.jogadaService.jogada.dice_one.toString());
+    // if(this.turnService.turn.dice_one == val){
+    //   result = parseInt(result.toString()) + parseInt(this.turnService.turn.dice_one.toString());
     // }
-    // if(this.jogadaService.jogada.dice_two == val){
-    //   result = parseInt(result.toString()) + parseInt(this.jogadaService.jogada.dice_two.toString());
+    // if(this.turnService.turn.dice_two == val){
+    //   result = parseInt(result.toString()) + parseInt(this.turnService.turn.dice_two.toString());
     // }
-    // if(this.jogadaService.jogada.dice_three == val){
-    //   result = parseInt(result.toString()) + parseInt(this.jogadaService.jogada.dice_three.toString());
+    // if(this.turnService.turn.dice_three == val){
+    //   result = parseInt(result.toString()) + parseInt(this.turnService.turn.dice_three.toString());
     // }
-    // if(this.jogadaService.jogada.dice_four == val) {
-    //   result = parseInt(result.toString()) + parseInt(this.jogadaService.jogada.dice_four.toString());
+    // if(this.turnService.turn.dice_four == val) {
+    //   result = parseInt(result.toString()) + parseInt(this.turnService.turn.dice_four.toString());
     // } 
-    // if(this.jogadaService.jogada.dice_five == val) {
-    //   result = parseInt(result.toString()) + parseInt(this.jogadaService.jogada.dice_five.toString());
+    // if(this.turnService.turn.dice_five == val) {
+    //   result = parseInt(result.toString()) + parseInt(this.turnService.turn.dice_five.toString());
     // }
     return result;
   }
 
-  constructor(_jogadaService: JogadaService, private route: ActivatedRoute) { 
-    this.jogadaService = _jogadaService;
+  constructor(_turnService: TurnService, private route: ActivatedRoute) { 
+    this.turnService = _turnService;
     this.valor = this.route.snapshot.params['valor'];
   }
 

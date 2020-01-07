@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SequencyVerifyComponent } from './sequency-verify.component';
 
-describe('LwSequencyVerifyComponent', () => {
+describe('SequencyVerifyComponent', () => {
   let component: SequencyVerifyComponent;
   let fixture: ComponentFixture<SequencyVerifyComponent>;
 

@@ -1,9 +1,6 @@
-import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-
-import { Jogada } from './../jogada/jogada.component';
-import { JogadaService } from './../jogada.service';
 import { TrioEvenService } from '../trio-even.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-even-verify',
@@ -17,8 +14,8 @@ export class EvenVerifyComponent implements OnInit {
   trioEvenService: TrioEvenService;
 
   even(n: number, index: number):number {
-    let trio = this.trioEvenService.trio_verify();
-    return this.trioEvenService.verify_even(n, index, trio);
+    let trio = this.trioEvenService.trioVerify();
+    return this.trioEvenService.verifyEven(n, index, trio);
   }
 
   constructor(_trioEvenService: TrioEvenService, private router: ActivatedRoute) { 

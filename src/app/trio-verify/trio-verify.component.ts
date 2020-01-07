@@ -1,7 +1,4 @@
-
 import { Component, OnInit } from '@angular/core';
-
-import { JogadaService } from './../jogada.service';
 import { TrioEvenService } from '../trio-even.service';
 
 @Component({
@@ -11,7 +8,7 @@ import { TrioEvenService } from '../trio-even.service';
 })
 export class TrioVerifyComponent implements OnInit {
 
-  trioEvenService: TrioEvenService;
+  trioEvenService: TrioEvenService
 
   constructor(_trioEvenService: TrioEvenService) {
     this.trioEvenService = _trioEvenService;

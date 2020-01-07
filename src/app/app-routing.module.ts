@@ -1,17 +1,15 @@
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
-
-import { ValueVerifyComponent } from './value-verify/value-verify.component';
-import { EvenVerifyComponent } from './even-verify/even-verify.component';
-import { TrioVerifyComponent } from './trio-verify/trio-verify.component';
-import { QuadraVerifyComponent } from './quadra-verify/quadra-verify.component';
-import { SequencyVerifyComponent } from './sequency-verify/sequency-verify.component';
-import { FullHouseVerifyComponent } from './full-house-verify/full-house-verify.component';
 import { AuroraVerifyComponent } from './aurora-verify/aurora-verify.component';
-import { JogadaComponent } from './jogada/jogada.component';
+import { FullHouseVerifyComponent } from './full-house-verify/full-house-verify.component';
+import { SequencyVerifyComponent } from './sequency-verify/sequency-verify.component';
+import { QuadraVerifyComponent } from './quadra-verify/quadra-verify.component';
+import { EvenVerifyComponent } from './even-verify/even-verify.component';
+import { ValueVerifyComponent } from './value-verify/value-verify.component';
+import { TurnComponent } from './turn/turn.component';
+import { TrioVerifyComponent } from "./trio-verify/trio-verify.component";
 
-const APP_ROUTES: Routes = [
-    { path: '', component: JogadaComponent},
+const routes: Routes = [{ path: '', component: TurnComponent},
     { path: 'uns/:valor', component: ValueVerifyComponent},
     { path: 'dois/:valor', component: ValueVerifyComponent},
     { path: 'tres/:valor', component: ValueVerifyComponent},
@@ -28,4 +26,8 @@ const APP_ROUTES: Routes = [
     { path: 'aurora', component: AuroraVerifyComponent}
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
